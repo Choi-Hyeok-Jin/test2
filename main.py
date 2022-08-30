@@ -273,9 +273,9 @@ if __name__ == '__main__':
 # print(a)
 #
 # 리스트 값 삭제하기-2
-name = ['최혁진', '김도현', '김승연']
+name = ['최혁진', '김도현', '김덕배']
 del name[0]
-print(name)0
+print(name)
 
 
 
