@@ -273,7 +273,7 @@ print(a)
 # print(a)
 #
 # 리스트 값 삭제하기-2
-name = ['김덕배', '마리노', '산체스']
+name = ['최혁진', '김도현', '김승연']
 del name[0]
 print(name)
 
