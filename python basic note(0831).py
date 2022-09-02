@@ -138,3 +138,64 @@
 # print(message)
 
 #반복문(while)
+
+# treehit = 0
+# while treehit < 10:
+#     treehit = treehit + 1
+#     print("나무를 %d번 찍었습니다." % treehit)
+#     if treehit == 10:
+#        print("나무가 넘어갑니다.")
+#
+# while문 break
+# coffee = 10
+# money = 300
+# while money:
+#     print("돈을 받았으니 커피를 줍니다.")
+#     coffee = coffee -1
+#     print("남은 커피의 양은 %d개 입니다." % coffee)
+#     if coffee == 0:
+#         print("커피가 다 떨어졌습니다. 판매를 중지합니다.")
+#         break
+
+# while문 continue
+
+# a = 0
+# while a < 10:
+#     a= a+1
+#     if a% 2 == 0:
+#         continue
+#     print(a)
+
+# while문 무한반복
+# while True:
+#     print("안녕하세요")
+#     break
+
+# for문의 기본 구조
+# for 변수 in 리스트(또는 튜플, 문자열):
+#    수행할 문자1
+#    수행할 문자2
+
+# for문 튜플형
+# a = [(1,2), (3,4), (5,6)]
+# for (first, last) in a:
+#     # print(first)
+#     # print(last)
+#     print(first + last)
+
+# # for문 응용
+# marks = [90, 25, 67, 45, 80]
+# number = 0
+# for mark in marks:
+#     number = number + 1
+#     if mark >= 60:
+#         print("%d번 학생은 합격입니다." % number)
+#     else:
+#         print("%d번 학생은 불합격입니다." % number)
+
+# for문 continue
+
+marks = [90, 25, 67, 45, 80]
+number = 0
+for mark in marks:
+    number = number + 1
