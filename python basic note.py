@@ -195,7 +195,7 @@
 
 # for문 continue
 
-marks = [90, 25, 67, 45, 80]
+marks = [90, 25, 77, 45, 80]
 number = 0
 for mark in marks:
     number = number + 1
