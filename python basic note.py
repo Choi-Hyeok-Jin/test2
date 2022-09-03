@@ -195,7 +195,271 @@
 
 # for문 continue
 
-marks = [90, 25, 77, 45, 80]
-number = 0
-for mark in marks:
-    number = number + 1
+# # if-for-continue 문
+# marks = [90, 25, 77, 45, 80]
+# number = 0
+# for mark in marks:
+#     number = number + 1
+#     if mark < 60:
+#         break #continue # 다시 처음으로 돌아간다!
+#     print("%d번 학생 축하합니다. 합격입니다." %number)
+
+## for-range 문
+
+# sum = 0
+# for i in range(1,11):
+#     sum = sum + i
+# print(sum)
+
+# ## double for 문
+# for i in range(2,10):
+#     for j in range (1,10):
+#         print(i*j, end="")
+#         # end= " "// print 함수의 option, 한줄씩 띄지 않고, 마지막에 end가 이어져서 나옴
+#     print('')
+#앞의 예제에서 print(i*j, end="")와 같이 매개변수 end를 넣어 준 이유는 해당 결과값을
+#출력할 때 다음 줄로 넘기지 않고, 그 줄에 계속해서 출력하기 위해서이다. 그 다음에 이어지는
+#print('')는 2단, 3단 등을 구분하기 위해 두 번째 for문이 끝나면 결과값을 다음 줄부터
+# 출력하게 해주는 문장이다!!
+
+# 리스트 내포 사용하기
+# result = [x * y for x in range(2,10) for y in range(1,10)]
+# print(result)
+
+# 리스트 내포 다른 표현
+# result = []
+# for x in range(2,10):
+#     for y in range(1,10):
+#         result.append(x*y)
+# print(result)
+# 파이썬 함수의 구조
+# def 함수명(매겨변수): 매개변수는 input
+# <수행할 문장1>
+# <수행할 문장2>  # 1,2는 함수f
+# ruturn 리턴 값  # output f(x)
+
+# 함수문의 예제
+# def sum (a,b):
+#     return a+b
+# print(sum(1,2))
+#
+# # 입력값이 없어도 출력가능
+# def say():
+#     return 'hi'
+# print(say())
+
+# # 입력값은 있지만, 출력값(return)이 없어도 출력가능
+# def sum(a,b):
+#     print("%d, %d의 합은 %d입니다." % (a,b,a+b))
+# print(sum(1,2))
+
+## append 함수는 출력값이 없고, pop 함수는 출력값이 있다.
+# mylist = [1,2,3]
+# print(mylist.append(4))
+#
+# mylist = [1,2,3]
+# print(mylist.pop())
+# print(mylist.pop())
+
+# *args : 입력값 개수의 제한받지 않고, 무한대로 입력가능
+# def sum_many(*args):
+#     sum = 0
+#     for i in args:
+#         sum = sum + i
+#     return sum
+# print(sum_many(1,2,3,4,5,6,7))
+
+
+# #kwarges.key = ['최혁진', '심정보', '최우현']
+# def print_kwarges(**kwargs):
+#     for k in kwargs.key():
+#         if (k == "name"):
+#             print("당신의 이름은 :" + k)
+# print(print_kwarges(name="int 조수"))
+# 함수의 결과 값은 언제나 튜플 형태로 하나이다.
+# def add_and_mul(a,b):
+#     return a*b, a+b, a-b
+# print(add_and_mul  (1,2) [0])
+
+#매개변수 초기값 미리 설정하기
+# def say_myself(name,old, man=False):
+#     print("나의 이름은 %s 입니다." % name)
+#     print("나이는 %s살입니다." %old)
+#     if man:
+#         print("남자입니다.")
+#     else:
+#         print('여자입니다.')
+# print(say_myself("최혁진", 25))
+
+## 함수 안에서 선언한 변수의 효력 범위
+
+# 1) 지역변수
+# a=1
+# def vartest(a):
+#     a = a +1
+#     return a
+#
+# print(vartest(2))
+# print(a)
+
+# 2) 지역함수가 범위 밖에 'a' 변수에게 영향을 주기
+# a=3
+# def vartest(a):
+#     a = a + 1
+#     return a
+# a = vartest(a)
+# print(a)
+
+# lambda 함수 사용하기! 함수를 한 줄로 축약해서 표헌하기
+# def add(a,b)
+#     return a+b
+# add = lambda a,b: a+b
+# print(add(1,2))
+## -> 리스트 안에 def 함수는 못 넣지만, 람다 함수는 사용가능!!
+# mylist = [lambda a,b: a+b, lambda a,b: a*b]
+# print(mylist[1](3,4))
+
+# 사용자 정의 함수 input
+# number = input("당신의 이름을 입력해주세요: ")
+# print(number)
+
+# print end('')
+# for i in range(10):
+#     print(i, end='번')
+
+# # 파일 읽고 쓰기: 파일 생성하고 쓰기 모드
+# f = open("새파일.txt", 'w', encoding = "UTF-8")
+# for i in range(1,11):
+#     data = "%d번째 줄입니다. \n" %i
+#     f.write(data)
+# f.close()
+#
+# # 파일 읽고 쓰기: 파일 읽기 모드
+# f = open("새파일.txt", 'r', encoding = "UTF-8")
+# while True:
+#     line = f.readline()
+#     if not line: # 한줄씩 모두 읽고 싶을 때!
+#         break
+#     print(line)
+# f.close()
+#
+# # 파일 읽고 쓰기: 파일 읽기 모드 - (1)
+# f = open("새파일.txt", 'r', encoding = "UTF-8")
+# lines = f.readlines()
+# for line in lines:
+#     print(line)
+# f.close()
+# #
+# # 파일 읽고 쓰기: 파일 읽기 모드 - (1) * 한줄씩 띄우기 없애기
+# f = open("새파일.txt", 'r', encoding = "UTF-8")
+# lines = f.readlines()
+# for line in lines:
+#     print(line, end="")
+# f.close()
+#
+# # 파일 읽고 쓰기: 파일 읽기 모드 - (1) * 한줄씩 띄우기 없애기
+# f = open("새파일.txt", 'r', encoding = "UTF-8")
+# lines = f.readlines()
+# for line in lines:
+#     print(line.strip('\n'))
+# f.close()
+#
+# # 파일 읽고 쓰기: 파일 읽기 모드 - (1) * 한줄씩 띄우기 없애고, 한 줄로 출력하기
+# f = open("새파일.txt", 'r', encoding = "UTF-8")
+# lines = f.readlines()
+# for line in lines:
+#     print(line.strip('\n'), end=(''))
+# f.close()
+
+# # read() 함수 이용해서 통째로 읽기
+# f = open("새파일.txt", 'r', encoding = "UTF-8")
+# data = f.read()
+# print(data)
+# f.close()
+
+# # # 파일 읽고 쓰기: 파일 추가하기 - (2)
+# f = open("새파일.txt", 'w', encoding = "UTF-8")
+# for i in range(1,11):
+#     data = "%d번째 줄입니다. \n" %i
+#     f.write(data)
+# f.close()
+#
+# f = open("새파일.txt", 'a', encoding = "UTF-8")
+# for i in range(11,21):
+#     data = "%d번째 줄입니다. \n" %i
+#     f.write(data)
+# f.close()
+#
+# # f = open("새파일.txt", 'r', encoding = "UTF-8")
+# # data = f.read()
+# # print(data)
+# # f.close()
+#
+# f = open("새파일.txt", 'r', encoding = "UTF-8")
+# lines = f.readlines()
+# for line in lines:
+#     print(line.strip('\n'))
+# f.close()
+
+## 파일생성 with 쓰기 >> f.close()문을 안써도 됨!
+# with open('foot.txt', 'w') as f:
+#    f.write("life is too short, you need python")
+
+#class = 반복되는 변수 & 메서드(함수)를 미리 정해놓은 틀(설계도)
+# class Fourcal:
+#     def __init__(self, first, second): #먼저 실행하는 생성자
+#        self.first = first
+#        self.second = second
+#     def setdata(self, first, second): # a= self
+#         self.first = first
+#         self.second = second
+#     def add(self):
+#         result = self.first + self.second
+#         return result
+#     def pow(self):
+#         result = self.first ** self.second
+#         return result
+#     def div(self):
+#         result = self.first / self.second
+#         return result
+
+# a = Fourcal(1,2)  # 클래스의 객체(인스턴스) = a.b
+# b = Fourcal(3,4)
+# print(b.add())
+# b = Fourcal()
+# a.setdata(2,4) # 객체 a의 객체변수 2,4
+# b.setdata(3,7) # 객체 b의 객체변수 3,7
+# print(b.add())
+# print(b.first)
+# print(b.second)
+
+# 클래스의 상속 = 부모의 클래스를 자식이 물려받는다.
+# class Morefourcal(Fourcal):
+#     def mul(self):
+#         result = self.first * self.second
+#         return result
+
+# a = Morefourcal(4,2)
+# print(a.add())
+# print(a.pow())
+
+# 메서드 오버라이딩 = 부모의 함수를 덮어쓴다.
+# class Safefourcal(Fourcal):
+#     def div(self):
+#         if self.second == 0:
+#             return 0
+#         else:
+#             return self.first ** self.second
+# a = Safefourcal(4,2)
+# print(a.div())
+
+# 클래스 변수 (종속적) vs. 클래스 객체 (독립적)
+# class Family:
+#     lastname = '김'
+# print(Family.lastname)
+# Family.lastname = '박'
+# print(Family.lastname)
+# a = Family()
+# b = Family()
+# print(a.lastname)
+# print(b.lastname)
