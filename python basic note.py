@@ -482,5 +482,95 @@
 # # 'as'는 mod3를 'a'라고 간단하게 지칭할 때 사용하는 표현임
 # print(a.div(9,3))
 
-from subfolder.test import *
+## 전체 모듈을 사용하려 할 때, 폴더 안에 init 파일을 꼭 만들어줄 것!!
+# from subfolder import *
+# mod1
+# print(mod2.mul(2,4))
 
+# 예외처리 try-except로 에러구문 처리하기!
+# try:
+#     4/0
+# except ZeroDivisionError as e:
+#     print(e)
+# print("최혁진 안녕하세요.")
+
+# try:
+#     a = [1.2]
+#     print(a[3])
+#     4 / 0
+#
+# except (ZeroDivisionError, IndexError) as e:
+#     print(e)
+
+# try:
+#     f = open("나 없는 파일", 'r')
+# except FileNotFoundError:
+#     pass
+#
+# print('최혁진')
+
+# 내장함수 filter
+# def positive(x):
+#     return x > 0
+#
+# a = list(filter(positive, [1,-3,4,0,-2,6]))
+# print(a)
+
+# 내장함수 map = 각 요소가 수행한 결과를 돌려줌!
+
+# def two_times(numberlist):
+#     result = []
+#     for number in numberlist:
+#         result.append(number*2)
+#     return result
+# result = two_times([1,2,3,4])
+# print(result)
+# def two_times(x):
+#     return x*2
+# a = list(map(two_times, [1,2,3,4]))
+# print(a)
+
+# b= list(map(lambda a: a*2, [1,2,3,4]))
+# print(b)
+
+#내장함수 zip
+# print(list(zip([1,2,3],[4,5,6],[7,8,9])))
+
+# 외장함수 = 라이버르리 함수, import 해서 쓰는 것!
+# argv_test.py
+
+# import random
+# lotto = sorted(random.sample(range(1,46),6))
+# print(lotto)
+#
+# f = open("새파일.txt", 'r', encoding = "UTF-8")
+# lines = f.readlines()
+# for line in lines:
+#     print(line)
+# f.close()
+
+# import pickle 객체의 형태를 그대로 유지하면서 파일에 저장하고 불러올 수 있는 함수다.
+#
+# name ='최혁진'
+# age = 25
+# address = '서울시 성북구 정릉동'
+# scores = {'korean': 90, 'english': 95, 'mathmatics': 85, 'science': 82}
+#
+# with open ('새파일.txt', 'wb') as file:
+#     pickle.dump(name, file)
+#     pickle.dump(age, file)
+#     pickle.dump(address, file)
+#     pickle.dump(scores, file)
+
+# import pickle
+#
+# with open ('새파일.txt', 'rb') as file:
+#     name = pickle.load(file)
+#     age = pickle.load(file)
+#     address = pickle.load(file)
+#     scores = pickle.load(file)
+#
+# print(name)
+# print(age)
+# print(address)
+# print(scores)
