@@ -452,7 +452,7 @@
 #             return self.first ** self.second
 # a = Safefourcal(4,2)
 # print(a.div())
-
+#
 # 클래스 변수 (종속적) vs. 클래스 객체 (독립적)
 # class Family:
 #     lastname = '김'
@@ -463,3 +463,24 @@
 # b = Family()
 # print(a.lastname)
 # print(b.lastname)
+
+## 파이썬 모듈 생성하고, 불러오기 사용법
+# import mod1
+# print(mod1.add(1,2))
+# from mod1 import add
+# print(add(1,2))
+
+# 모듈- 다른 경로에 있는 파이썬 모듈 불러오기
+# import sys
+# sys.path.append("C:/Users/user/PycharmProjects/test2/subfolder")
+# import mod1
+# print(mod1.add())
+
+# '패키지'란 여러 개의 모듈을 모아놓은 것. - mod3 불러오기
+# from subfolder.test.echo import mod3 as a
+# # 파일들 명 사이의 '.' = '속한다' 라는 표현임!
+# # 'as'는 mod3를 'a'라고 간단하게 지칭할 때 사용하는 표현임
+# print(a.div(9,3))
+
+from subfolder.test import *
+
